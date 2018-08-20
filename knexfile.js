@@ -11,7 +11,8 @@ module.exports = {
     },
     seeds: {
       directory: __dirname + "/db/seeds"
-    }
+    },
+    useNullAsDefault: true
   },
 
   staging: {
