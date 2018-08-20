@@ -14,7 +14,7 @@ router.get("/:id", function(req, res) {
 });
 
 router.get("/", function(req, res) {
-  carBrandsController.findAll(res);
+  carBrandsController.findAll(req, res);
 });
 
 router.put("/:id", function(req, res) {

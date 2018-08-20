@@ -4,8 +4,11 @@ const table = "car_brands";
 class CarBrandsDao {
   constructor() {}
 
-  findAll() {
-    return knex.select().from(table);
+  findAll(query) {
+    return knex
+      .select()
+      .from(table)
+      .paginate(query.limit, query.page);
   }
 
   findById(id) {

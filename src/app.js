@@ -1,10 +1,12 @@
 const express = require("express");
+const expressPaginate = require("express-paginate");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const app = express();
 // const knex = require("../config/database/db");
 
 app.use("/static", express.static("static"));
+app.use(expressPaginate.middleware(10, 100));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

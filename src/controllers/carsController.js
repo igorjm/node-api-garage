@@ -33,9 +33,9 @@ class CarsController {
    * Finds all entities.
    * @return all entities
    */
-  findAll(res) {
+  findAll(req, res) {
     this.carsDao
-      .findAll()
+      .findAll(req.query)
       .then(this.common.findSuccess(res))
       .catch(this.common.findError(res));
   }
