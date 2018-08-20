@@ -8,6 +8,7 @@ class CarsDao {
     return knex
       .select()
       .from(table)
+      .orderBy(query.sort_name, query.sort_type)
       .paginate(query.limit, query.page);
   }
 
