@@ -4,8 +4,12 @@ const table = "persons";
 class PersonsDao {
   constructor() {}
 
-  findAll() {
-    return knex.select().from(table);
+  findAll(query) {
+    return knex
+      .select()
+      .from(table)
+      .orderBy(query.sort_name, query.sort_type)
+      .paginate(query.limit, query.page);
   }
 
   findById(id) {

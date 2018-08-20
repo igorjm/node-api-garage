@@ -33,9 +33,9 @@ class PersonsController {
    * Finds all entities.
    * @return all entities
    */
-  findAll(res) {
+  findAll(req, res) {
     this.personsDao
-      .findAll()
+      .findAll(req.query)
       .then(this.common.findSuccess(res))
       .catch(this.common.findError(res));
   }
